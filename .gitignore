@@ -2,6 +2,5 @@
 .project
 node_modules/
 stop
-stop.*
 target/
 

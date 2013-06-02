@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                 'mvn dependency:copy-dependencies',
                 '<%=env.jscover%> -ws --document-root=src --report-dir=target --no-instrument=test --port=8001 & > /dev/null',
                 'phantomjs src/test/script/run-jscover-qunit.js http://localhost:8001/test/qunit/index.html',
-                'wget http://localhost:8001/stop'].join('&&')
+                'wget -O stop http://localhost:8001/stop'].join('&&')
           }
         },
         connect : {
