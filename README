@@ -1,8 +1,6 @@
-
+This is a grunt demo project.
 
 mvn dependency:copy-dependencies
-
-java -cp target/dependency/js-1.7R5pre.jar:target/dependency/JSCover-0.3.0.jar jscover.Main -fs --no-instrument=test src target/instrument/src
-
-java -cp target/dependency/js-1.7R5pre.jar:target/dependency/JSCover-0.3.0.jar  jscover.Main -ws --document-root=src --report-dir=target/report --no-instrument=test --port=8000
+java -cp target/dependency/js-1.7R5pre.jar:target/dependency/JSCover-0.3.0.jar jscover.Main -fs --no-instrument=test src target/instrument
+java -cp target/dependency/js-1.7R5pre.jar:target/dependency/JSCover-0.3.0.jar jscover.Main -ws --document-root=src --report-dir=target --no-instrument=test --port=8000
 phantomjs src/test/script/run-jscover-qunit.js http://localhost:8000/src/test/qunit/index.html
