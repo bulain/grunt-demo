@@ -28,12 +28,22 @@ module.exports = function(grunt) {
               urls : ['http://localhost:8000/test/qunit/index.html']
             }
           }
+        },
+        yuidoc: {
+          compile: {
+            name: 'grunt-demo',
+            options: {
+              paths: 'src/main/qunit/',
+              outdir: 'target/docs/'
+            }
+          }
         }
       });
 
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
   grunt.registerTask('default', ['connect', 'qunit', 'shell']);
 
