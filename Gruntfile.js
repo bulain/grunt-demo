@@ -37,6 +37,28 @@ module.exports = function(grunt) {
               outdir: 'target/docs/'
             }
           }
+        },
+        requirejs: {
+          compile: {
+            options: {
+              baseUrl: "src/main/qunit/",
+              name: 'qunit',
+              out: "target/dist/qunit.min.js"
+            }
+          }
+        },
+        jshint: {
+          all: ['src/main/**/*.js']
+        },
+        clean: {
+          build: ["target"]
+        },
+        uglify: {
+          my_target: {
+            files: {
+              'target/dist/qunit.uglify.js': ['src/main/qunit/qunit.js']
+            }
+          }
         }
       });
 
@@ -44,6 +66,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-yuidoc');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default', ['connect', 'qunit', 'shell']);
 
