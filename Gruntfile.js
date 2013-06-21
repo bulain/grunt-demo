@@ -54,7 +54,7 @@ module.exports = function(grunt) {
           build: ["target"]
         },
         uglify: {
-          my_target: {
+          compile: {
             files: {
               'target/dist/qunit.uglify.js': ['src/main/qunit/qunit.js']
             }
