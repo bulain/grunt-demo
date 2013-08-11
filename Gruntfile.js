@@ -29,34 +29,39 @@ module.exports = function(grunt) {
             }
           }
         },
-        yuidoc: {
-          compile: {
-            name: 'grunt-demo',
-            options: {
-              paths: 'src/main/qunit/',
-              outdir: 'target/docs/'
+        yuidoc : {
+          compile : {
+            name : 'grunt-demo',
+            options : {
+              paths : 'src/main/qunit/',
+              outdir : 'target/docs/'
             }
           }
         },
-        requirejs: {
-          compile: {
-            options: {
-              baseUrl: "src/main/qunit/",
-              name: 'qunit',
-              out: "target/dist/qunit.min.js"
+        requirejs : {
+          compile : {
+            options : {
+              baseUrl : "src/main/",
+              include: ["util/util1", 'util/util2'],
+              out : "target/dist/util.min.js",
+              optimize : "none",
+              wrap : {
+                startFile : ['src/main/frag/startFile.js'],
+                endFile : ["src/main/frag/global.js", 'src/main/frag/endFile.js'],
+              },
             }
           }
         },
-        jshint: {
-          all: ['src/main/**/*.js']
+        jshint : {
+          all : ['src/main/**/*.js']
         },
-        clean: {
-          build: ["target"]
+        clean : {
+          build : ["target"]
         },
-        uglify: {
-          compile: {
-            files: {
-              'target/dist/qunit.uglify.js': ['src/main/qunit/qunit.js']
+        uglify : {
+          compile : {
+            files : {
+              'target/dist/qunit.uglify.js' : ['src/main/qunit/qunit.js']
             }
           }
         }
