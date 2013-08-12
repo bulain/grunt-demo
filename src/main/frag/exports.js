@@ -1,6 +1,6 @@
+
 var exports = ['util/util1', 'util/util2', ];
 
-var global = {};
 require(exports, function() {
   var modules = arguments;
   exports.forEach(function(ns, index) {
@@ -12,16 +12,7 @@ require(exports, function() {
         prev[curr] = modules[index];
       }
       return prev[curr];
-    }, global);
+    }, window);
   });
 });
 
-if (typeof define !== 'undefined' && define.amd) {
-  define('', [], function() {
-    return global;
-  });
-} else if (typeof module !== 'undefined' && module.exports) {
-  module.exports = global;
-} else {
-  root = global;
-}

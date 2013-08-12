@@ -46,7 +46,7 @@ module.exports = function(grunt) {
               out : "target/dist/util.min.js",
               optimize : "none",
               wrap : {
-                startFile : ['src/main/frag/startFile.js'],
+                startFile : ['src/main/frag/startFile.js', 'src/main/almond/almond.js'],
                 endFile : ["src/main/frag/exports.js", 'src/main/frag/endFile.js'],
               },
             }
