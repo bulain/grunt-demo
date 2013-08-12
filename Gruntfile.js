@@ -47,7 +47,7 @@ module.exports = function(grunt) {
               optimize : "none",
               wrap : {
                 startFile : ['src/main/frag/startFile.js'],
-                endFile : ["src/main/frag/global.js", 'src/main/frag/endFile.js'],
+                endFile : ["src/main/frag/exports.js", 'src/main/frag/endFile.js'],
               },
             }
           }
